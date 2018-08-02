@@ -4,11 +4,11 @@ import android.app.*
 import android.arch.lifecycle.*
 import org.jetbrains.anko.*
 import org.jetbrains.kotlinconf.*
-import org.jetbrains.kotlinconf.model.KotlinConfDataRepository
+import org.jetbrains.kotlinconf.model.DataRepository
 import org.jetbrains.kotlinconf.presentation.*
 
 class SessionListViewModel(app: Application) : AndroidViewModel(app), AnkoLogger {
-    private val repository: KotlinConfDataRepository =
+    private val repository: DataRepository =
         getApplication<KotlinConfApplication>().repository
 
     private lateinit var navigationManager: NavigationManager

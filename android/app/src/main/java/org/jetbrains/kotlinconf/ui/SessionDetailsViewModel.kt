@@ -7,16 +7,17 @@ import org.jetbrains.kotlinconf.*
 import org.jetbrains.kotlinconf.model.*
 
 class SessionDetailsViewModel(app: Application) : AndroidViewModel(app), AnkoLogger {
-    private val repository: KotlinConfDataRepository =
-        getApplication<KotlinConfApplication>().repository
+    private val repository: DataRepository = getApplication<KotlinConfApplication>().repository
 
     private val _session: MutableLiveData<SessionModel> = MutableLiveData()
+
     val session: LiveData<SessionModel> = _session
 
     val isFavorite: LiveData<Boolean> = MediatorLiveData<Boolean>().apply {
         addSource(session) { session ->
             value = repository.favorites.value?.contains(session)
         }
+
 
         addSource(repository.favorites) { favorites ->
             value = favorites?.contains(session.value)

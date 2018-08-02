@@ -50,3 +50,9 @@ class SessionModel(
         }
     }
 }
+
+fun AllData.allSessions(): List<SessionModel> =
+    sessions.mapNotNull { it.id }.mapNotNull { SessionModel.forSession(this, it) }
+
+fun AllData.favoriteSessions(): List<SessionModel> =
+    favorites.mapNotNull { it.sessionId }.mapNotNull { SessionModel.forSession(this, it) }

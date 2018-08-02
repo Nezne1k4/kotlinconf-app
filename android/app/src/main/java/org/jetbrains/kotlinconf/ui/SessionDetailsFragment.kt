@@ -40,7 +40,6 @@ import org.jetbrains.kotlinconf.R
 import org.jetbrains.kotlinconf.model.*
 
 class SessionDetailsFragment : Fragment() {
-
     private lateinit var toolbar: Toolbar
     private lateinit var speakersTextView: TextView
     private lateinit var timeTextView: TextView

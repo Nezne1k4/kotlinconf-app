@@ -2,7 +2,7 @@ package org.jetbrains.kotlinconf.data
 
 import kotlinx.serialization.*
 
-@Serializable
+//@Serializable
 data class Speaker(
     val firstName: String? = null,
     val lastName: String? = null,
